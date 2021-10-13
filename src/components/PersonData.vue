@@ -10,24 +10,31 @@
         <span class="item">Цена</span>
         <span class="item">Гарантия</span>
     </div>
-    <div class="item-wrapper">
+    <div v-for="person of persons" :key="person.name" class="item-wrapper">
         <div class="person-data">
             <span class="item__person-data-number">1</span>
-            <span class="item__person-data-name">Писарев Михаил</span>
-            <span class="item__person-data-tel">+7 978 513 63 16</span>
-            <span class="item__person-data">Пoкупка</span>
-            <span class="item__person-data">Xiaomi</span>
-            <span class="item__person-data">Redmi note 7</span>
-            <span class="item__person-data">4600</span>
-            <span class="item__person-data">9600</span>
-            <span class="item__person-data">60 дн.</span>
+            <span class="item__person-data-name">{{person.name}}</span>
+            <span class="item__person-data-tel">{{person.tel}}</span>
+            <span class="item__person-data">{{person.question}}</span>
+            <span class="item__person-data">{{person.manufacturer}}</span>
+            <span class="item__person-data">{{person.model}}</span>
+            <span class="item__person-data">{{person.cost_price}}</span>
+            <span class="item__person-data">{{person.price}}</span>
+            <span class="item__person-data">{{person.guarantee}}</span>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        
+        props: {
+            persons: Array
+        },
+        data() {
+            return {
+                
+            }
+        }
     }
 </script>
 
@@ -38,13 +45,13 @@
     margin-top: 10px;
     border: 1px solid var(--border-grey);
     /* border-bottom: 1px solid var(--border-grey); */
-    border-radius: 4px  ;
+    border-radius: 4px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .item-wrapper {
-    height: 100%;
+    height: 8%;
     width: 100%;
     display: flex;
     flex-direction: column;

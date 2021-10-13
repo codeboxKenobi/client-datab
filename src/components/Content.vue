@@ -4,12 +4,14 @@
             <div class="nav-button">
                 <button @click="openModalAdd" class="n-button">+</button>
                 <button @click="openModalWarehouse" class="n-button">Склад</button>
-                <button class="n-button">Аналитика</button>
+                <button @click="openModalAnalytics" class="n-button">Аналитика</button>
             </div>
         </div>
         <ClientsWrapper />
         <ModalAdd v-if="isOpenAdd" />
         <ModalWarehouse v-if="isOpenWarehouse" />
+        <ModalAnalytics v-if="isOpenAnalytics"  />
+
         
     </div>
 </template>
@@ -18,13 +20,15 @@
 import ClientsWrapper from './ClientsWrapper.vue'
 import ModalAdd from './ModalAdd.vue'
 import ModalWarehouse from './ModalWarehouse.vue'
+import ModalAnalytics from './ModalAnalytics.vue'
 
 
     export default {
         data() {
             return {
                 isOpenAdd: false,
-                isOpenWarehouse: false
+                isOpenWarehouse: false,
+                isOpenAnalytics: false
             }
         },
         methods: {
@@ -33,12 +37,19 @@ import ModalWarehouse from './ModalWarehouse.vue'
             },
             openModalWarehouse() {
                 this.isOpenWarehouse = true
+            },
+             openModalAnalytics() {
+                this.isOpenAnalytics = true
+            },
+            closeModalAdd() {
+                this.isOpenAdd = false
             }
         },
         components: {
             ClientsWrapper,
             ModalAdd,
-            ModalWarehouse
+            ModalWarehouse,
+            ModalAnalytics
         }
     }
 </script>
