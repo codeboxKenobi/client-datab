@@ -12,6 +12,9 @@
     </div>
     <div v-for="person of persons" :key="person.id" class="item-wrapper">
         <div class="person-data">
+            <button class="edit-button" type="button">
+                <img class="edit" src="../assets/edit-icon.png" alt="">
+            </button>
             <span class="item__person-data-number">{{counter()}}</span>
             <span class="item__person-data-name">{{person.name}}</span>
             <span class="item__person-data-tel">{{person.tel}}</span>
@@ -82,6 +85,7 @@
     height: 0px;
     width: 100px;
     padding: 20px;
+    margin-left: 38px;
     font-size: 12px;
     display: flex;
     justify-content: center;
@@ -91,6 +95,7 @@
     height: 0px;
     width: 100px;
     padding: 20px;
+    margin-left: 8px;
     font-size: 12px;
     display: flex;
     justify-content: center;
@@ -157,5 +162,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.edit-button {
+    background-color: var(--color-grey);
+    margin-left: 4px;
+    width: 30px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+.edit-button:hover {
+    background-color: var(--hover-grey);
+    border: 1px solid var(--border-grey);
+    border-radius: 4px;
+    opacity: 0.8;
+
+}
+.edit {
+     width: 22px
 }
 </style>
