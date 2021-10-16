@@ -10,9 +10,9 @@
         <span class="item">Цена</span>
         <span class="item">Гарантия</span>
     </div>
-    <div v-for="person of persons" :key="person.name" class="item-wrapper">
+    <div v-for="person of persons" :key="person.id" class="item-wrapper">
         <div class="person-data">
-            <span class="item__person-data-number">1</span>
+            <span class="item__person-data-number">{{counter()}}</span>
             <span class="item__person-data-name">{{person.name}}</span>
             <span class="item__person-data-tel">{{person.tel}}</span>
             <span class="item__person-data">{{person.question}}</span>
@@ -26,6 +26,7 @@
 </template>
 
 <script>
+
     export default {
         props: {
             persons: Array
@@ -34,6 +35,17 @@
             return {
                 
             }
+        },
+        
+        computed: {
+            // ?
+            counter() {
+                let count = 1
+                return function() {
+                    return count++
+                }
+            },
+            // ?
         }
     }
 </script>
