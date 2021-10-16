@@ -3,7 +3,7 @@
         <div class="modal-add-client">
             <div class="numb-close">
                 <div class="person-number">
-                    <span># 1</span>
+                    <span></span>
                 </div>
                 <div class="close-modal">
                     <img @click="closeModalAdd" src="../assets/close.png" alt="">
@@ -43,6 +43,9 @@ export default {
     },
 
     methods: {
+            reloadPage() {
+                window.location.reload();
+            },
         closeModalAdd() {
             this.$parent.closeModalAdd()
         },
@@ -76,6 +79,7 @@ export default {
             });
             console.log(response);
             this.closeModalAdd()
+            // this.reloadPage()
         },
     },
     mounted() {
@@ -119,7 +123,7 @@ export default {
 .person-number {
     height: 90%;
     width: 15%;
-    border: 1px solid var(--border-grey);
+    /* border: 1px solid var(--border-grey); */
     border-radius: 4px;
     padding-left: 10px;
     display: flex;
